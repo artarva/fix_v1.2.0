@@ -1,0 +1,156 @@
+{
+	"types": [],
+	"structs": [
+		    {
+              	"name": "person",
+              	"base": "",
+              	"fields": {
+              		"name": "string",
+              		"gender": "uint8",
+					"id": "string",
+              		"phoneNum": "string",
+					"address": "string",
+              		"nation": "string"
+                }
+            },
+
+			{
+              	"name": "company",
+              	"base": "",
+              	"fields": {
+					"name": "string",
+              		"creditCode": "string",
+					"contactPerson": "string",
+              		"contactPhone": "string"
+                }
+            },
+			  
+            {
+              	"name": "userregreq",
+              	"base": "",
+              	"fields": {
+              		"userGuuid": "string",
+              		"userName": "string",
+					"userName": "uint16",
+					"registerationTime": "string",
+					"proxyPlatformID": "string",
+					"person": "person",
+					"company": "company"
+                }
+            },
+			{
+              	"name": "fileInfo",
+              	"base": "",
+              	"fields": {
+					"filetype": "uint16",
+					"sizes":"uint64",
+					"hmac"	:"string",   
+					"storageLocationURL"	:"string"
+					}
+            },	
+
+			{
+              	"name": "rightDescription",
+              	"base": "",
+              	"fields": {
+					"rightOwnerName":"string", 
+					"rightOwnerID":"string", 
+					"rightExpiration":"string", 
+					"rightSourceType":"string"
+					}
+            },				
+			
+			{
+              	"name": "digitrightreq",
+              	"base": "",
+              	"fields": {
+					"certificationID":      "string",    
+					"certificationName": 	"string",       
+					"powerinfoID": 	        "string",           
+					"Catalog": 	            "uint16",
+					"workName": 	        "string",           
+					"fingerPrint":          "string",            
+					"originalFileDigest":   "string",     	  
+					"inventionType": 	    "uint16",
+					"productionTime": 	    "string",           
+					"publishedtime": 	    "string",       
+					"rightApplyTime": 	    "string",           
+					"applicantID": 	        "string",           
+					"applicantName": 	    "string",       
+					"applicantSignature":   "string",          
+					"issuerID":             "string",       
+					"issuer": 	            "string",           
+					"issuerSignature":      "string",     
+					"rightDescription":     "rightDescription",
+					"fileInfo":             "fileInfo"
+                }
+            },
+			{
+              	"name": "evidencereq",
+              	"base": "",
+              	"fields": {
+					"evidenceID"  :"string", 
+					"collector"  :"string", 
+					"collectorId"  :"string", 
+					"collectorSignature"  :"string", 
+					"collectTime"  :"string", 
+					"evidenceTittle"  :"string", 
+					"evidenceDescription"  :"string", 
+					"evidenceDigest"  :"string", 
+					"torUrl"  :"string", 
+					"torSite"  :"string", 
+					"torRightID"  :"string", 
+					"fileInfo": "fileInfo"
+                }
+            }
+       ],
+	"actions": [
+              {
+              	"action_name": "userregreq",
+              	"type": "userregreq"
+              },
+			  {
+              	"action_name": "digitrightreq",
+              	"type": "digitrightreq"
+              },
+			  {
+              	"action_name": "evidencereq",
+              	"type": "evidencereq"
+              }
+       ],
+	"tables": [
+              {
+              	"table_name": "userRegInfo",
+              	"index_type": "string",
+              	"key_names":  [
+              		"userGuuid"
+              	 ],
+              	"key_types":  [
+              		"string"
+              	 ],
+              	"type": "userregreq"
+              },
+			  {
+              	"table_name": "digitRightInfo",
+              	"index_type": "string",
+              	"key_names":  [
+              		"certificationID"
+              	 ],
+              	"key_types":  [
+              		"string"
+              	 ],
+              	"type": "digitrightreq"
+              },
+			  {
+              	"table_name": "evidenceInfo",
+              	"index_type": "string",
+              	"key_names":  [
+              		"evidenceID"
+              	 ],
+              	"key_types":  [
+              		"string"
+              	 ],
+              	"type": "evidencereq"
+              }
+       ]
+}

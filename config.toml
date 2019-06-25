@@ -1,0 +1,46 @@
+# Configuration for Bottos Node
+
+[Node]
+DataDir = "./datadir"
+ExporterAddr = ":9100"
+
+[Rest]
+RESTPort = 8689
+RESTHost = "0.0.0.0"
+#rest with tls
+TLSHost = "0.0.0.0"
+TLSPort = 8691
+ServerCertFile    = "./cert/server/cert.pem"
+ServerKeyFile     = "./cert/server/key.pem"
+
+[P2P]
+P2PPort = 9868
+P2PServAddr = "52.82.70.223"
+PeerList = [
+]
+P2PAuthRequried = false
+P2PAuthKeyList = []
+MaxPeer = 200
+
+[Owner]
+Solo = true
+Name = "bottos"
+KeyStoreDir = "./"
+Passwd = "Bottos123"
+
+[Owner.Signature]
+Type = "keystore"
+
+[Plugin]
+
+[Plugin.MongoDB]
+URL = "mongodb://bottos:bottos@127.0.0.1:27017/bottos"
+
+[Plugin.Wallet]
+WalletDir = ""
+WalletRESTPort = 6869
+WalletRESTHost = "localhost"
+
+[Plugin.Log]
+LogRESTPort = 6870
+LogRESTHost = "localhost"

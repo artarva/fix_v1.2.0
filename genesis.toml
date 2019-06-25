@@ -1,0 +1,4 @@
+# Initial configuration for the Genesis Node
+
+GenesisTime = "2019-05-19T12:00:00"
+GenesisKey = "0453d9b986c7c94c78f78ac8d68d25c8295d250b0efa5cb7e30d1825ffa536fd6d5b036a7976bf1698f1fbe25a6b323d7fb7e8ba24bd3d59c33f9675fc5f9fe286"
